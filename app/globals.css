@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/* dark: ทำงานตาม class "dark" บน <html> (ตั้งโดย next-themes ใน app/lib/theme.tsx) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: var(--color-zinc-50);
+  --foreground: var(--color-zinc-900);
+}
+
+:root.dark {
+  --background: var(--color-zinc-900);
+  --foreground: var(--color-zinc-100);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
